@@ -1,0 +1,507 @@
+/* GLOBALES */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;/* 1rem = 10px */
+    font-family: 'Raleway', sans-serif;}
+
+img {max-width: 100%;}
+
+li {list-style: none;}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#pagina_1 {
+    display: grid;
+    grid-template-areas:"nav nav nav"
+    "banner banner banner"
+    "separador separador separador"
+    "precio precio precio"
+    "extra extra extra"
+    "footer footer footer";
+    grid-template-columns: repeat(3, 1fr);
+    background: rgb(3,10,10);
+background: linear-gradient(305deg, rgba(3,10,10,1) 0%, rgba(88,88,88,1) 100%);
+}
+/* navegacion */
+
+.nav {grid-area: nav;
+    background-color: #222;
+    color: #fff;
+display: flex;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+padding: .5rem 2rem;
+position: fixed;
+width: 100%;
+z-index: 10000;}
+
+.nav h1 {
+    background:#FF6C00;
+    padding: .25rem .75rem;
+    border-radius: .5rem;
+    transition: all 2s;}
+.nav h1:hover {font-size: 4rem;
+}
+
+.nav_menu a{
+    color: #fff;
+font-size: 2rem;}
+.nav_menu a:hover {color: #FF6C00;}
+.nav_menu ul{
+    display: flex;
+    align-items: center;}
+.nav_menu li{
+    margin-right: 1rem;
+    }
+.nav_logo {height: 14rem;}
+
+@media (max-width:1024px){
+.nav {flex-direction: column;
+row-gap: 2rem;}
+}
+
+.separador_header {
+    height: 15rem;
+}
+/* Banner */
+
+.banner {grid-area: banner;
+background-color: #FF6C00;
+color: white;
+text-align: center;
+
+}
+.padre_banner {display: grid;
+    gap: 8rem;
+padding: 6rem;}
+
+.padre_banner h2 {font-size: 5rem;}
+
+.banner_hijo {display: flex;
+gap: 5rem;
+align-items: center;
+justify-content: center;}
+
+.banner_card {width: 34rem;}
+
+.banner_hijo h3 {font-size: 3rem;
+padding: 2rem;}
+.banner_hijo p {font-size: 2rem;}
+
+.crossfit-img {color: white;
+height: 15rem;}
+
+@media (max-width:1192px){
+    .banner_hijo {flex-direction: column;}
+    .separador_header {height: 15rem;}
+    .banner_hijo p {font-size: 3rem;}
+    .banner_hijo h3 {font-size: 4rem;}}
+@media (max-width:944px){
+    .separador_header {height: 24rem;}}
+
+.separador_banner {height: 10rem;
+    grid-area: separador;
+}
+/* Lista de precios */
+
+.precio_padre {grid-area: precio;
+display: grid;
+}
+
+.precio_hijo {display: flex;
+    justify-content: center;
+    align-items: center;
+gap: 5rem;
+color: white;
+font-weight: bold;}
+.precio {width: 20%;
+    background-color: rgba(5,4,3,0.8);
+    border-radius: 20px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 1.5em 1.5em 2.5em;}
+
+.precio_precio {
+font-size: 9rem;
+}
+.precio ul li {border-bottom: 1px solid #FF6C00;
+    font-weight: lighter;
+    padding: 1em 0;
+    text-align: center;
+    font-size: 2rem;
+    }
+
+.precio_boton {color: white;
+    border-radius: 10rem;
+    background-color: #FF6C00;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border: none;
+    position: relative;
+    top: 4rem;
+}
+
+@media (max-width:1260px){
+    .precio_hijo {flex-direction: column;}
+    .precio {width: 40%;}}
+
+@media screen and (max-width:659px) {
+    .precio_precio {font-size: 7rem}
+    .precio ul li {font-size: 2.3rem;}
+}    
+/* aside extra */
+
+.extra_padre {grid-area: extra;
+display: grid;}
+.extra_hijo {background-color: #FF6C00;
+    
+    height: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+margin-top: 10rem;}
+    
+.p-extra {color: white;
+    font-size: 2.5rem;
+    width: 35%;
+    font-weight: bold;
+    margin-right: 5rem;
+}
+
+
+.email-1 {color: rgb(61, 60, 60);
+    border-radius: 10rem;
+    border: 1px solid #FF6C00;
+    padding: 1rem 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.email-2 {color: white;
+    border: 1px solid #FF6C00;
+    border-radius: 10rem;
+    background-color: #474645;
+    padding: 1rem 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.email-2:hover {
+    cursor: pointer;}
+.form .enviar:hover {
+    cursor: pointer}
+.email-1:focus {
+    outline: none;}
+.form__input::placeholder {
+    color: white;}
+.form .form__input:focus {
+outline: none;}
+
+@media screen and (max-width:658px) {
+    .email-1 {width: 25.5rem;}
+}
+/* footer */
+
+.footer_padre {grid-area: footer;
+display: grid;}
+.footer_hijo {display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.footer_texto {width: 20%;
+margin-right: 20rem;}
+.footer_texto h1, p, h3 {margin: 1rem;}
+
+.maps iframe {
+border: 1px solid black;
+border-radius: 10%;
+margin-bottom: 5rem;}
+
+.redes {display: flex;
+justify-content: center;}
+
+.redes li {
+    list-style: none;
+    margin: 1rem 15px;
+}
+.redes li a {
+    position: relative; 
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 63px;
+    background: white;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #666;
+    transition: 0s;
+}
+.redes .what a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: green;
+    transform: scale(.9);
+    z-index: -1;
+}
+.redes .what a:hover::before {
+transform: scale(1.1);
+box-shadow: 0 0 15px green;
+}
+.redes .what a:hover {
+    color: green;
+    box-shadow: 0 0 5px green;
+    text-shadow: 0 0 5px green;
+}
+.redes .face a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #3b5998;
+    transform: scale(.9);
+    z-index: -1;
+}
+.redes .face a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #3b5998;
+}
+.redes .face a:hover {
+    color: #3b5998;
+    box-shadow: 0 0 5px #3b5998;
+    text-shadow: 0 0 5px #3b5998;
+}
+.redes .insta a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgb(240, 40, 240);
+    transform: scale(.9);
+    z-index: -1;
+}
+.redes .insta a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(240, 40, 240);
+}
+.redes .insta a:hover {
+    color: rgb(240, 40, 240);
+    box-shadow: 0 0 5px rgb(240, 40, 240);
+    text-shadow: 0 0 5px rgb(240, 40, 240);
+}
+
+@media (max-width:964px){
+    .footer_texto {width: 40%; margin-right: 0rem;}
+    .footer_hijo {flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+    }
+@media screen and (max-width:666px){
+    .footer_texto {width: 60%;}
+}
+
+/* Pagina cronograma */
+.fondo_cronograma {background: rgb(3,10,10);
+    background: linear-gradient(305deg, rgba(3,10,10,1) 0%, rgba(88,88,88,1) 100%);
+    }
+.separador_cronograma {height: 20rem;}
+.cronograma {width: 100%;
+    height: 1000px;
+    background-image: url("../img/cronograma2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+background-size: contain;}
+
+
+/* Pagina videos */
+
+#pagina_3 {display: grid;
+grid-template-areas: "nav nav nav"
+"sep sep sep"
+"videos videos videos";
+}
+
+.separador_videos {height: 15.5rem;
+grid-area: sep;}
+
+.fondo_videos {background: rgb(3,10,10);
+    background: linear-gradient(305deg, rgba(3,10,10,1) 0%, rgba(88,88,88,1) 100%);
+    }
+.videos {text-align: center;
+    grid-area: videos;
+}
+.videos iframe {margin: 3rem;}
+.videos h2 {background-color: #FF6C00;
+width: 100%;
+height: 8rem;
+font-size: 5rem;
+color: white;
+font-weight: bold;}
+
+@media (max-width: 1024px){
+.separador_videos {height: 26rem;}
+}
+/* Pagina contacto*/
+
+.contacto {
+    background-color: #FF6C00;
+    width: 100%;
+    height: 100rem;
+}
+.contacto .contacto-ti,.contacto-p{
+    color: white;
+    
+    width: 50%;
+}
+.contacto-ti {
+    font-size: 3rem;
+    position: relative;
+    top: 10rem;
+    left: 42rem;
+}
+.contacto-p {
+    font-size: 10rem;
+    font-weight: bold;
+    position: relative;
+    top: 15rem;
+    left: 45rem;
+}
+.form .form__input {
+    color: white;
+    font-weight: bold;
+    border-radius: 10rem;
+    display: block;
+    width: 110rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    border: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    font-family: "Raleway";
+    margin: 2rem;
+    padding: 0.5rem;
+    position: relative;
+    left: 25rem;
+    top: 20rem;
+}
+.form .enviar {
+    color: white;
+    font-weight: bold;
+    border-radius: 10rem;
+    display: block;
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    border: none;
+    background: gray;
+    font-family: "Raleway";
+    margin: 2rem;
+    padding: 0.5rem;
+    position: relative;
+    left: 65rem;
+    top: 20rem;
+}
+
+/* Pagina cuenta */
+.cuenta_imagen{background-image: url("../img/cuenta.jpg");
+width: 100%;
+height: 790px;
+background-repeat: no-repeat;
+background-size: cover;}
+.cuenta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 50rem;
+}
+.cuenta_contenedor {
+        width: 30%;
+        height: 60rem;
+        background-color: rgb(255, 251, 251, 0.8);
+        border-radius: 20px;
+}
+.cuenta_h3 {display: flex;
+justify-content: center;
+align-items: center;}
+.cuenta_h3 h3 {text-align: center;
+    color: black;
+    font-size: 3rem;
+}
+.cuenta_form {
+        color: black;}
+form .cuenta_check {margin-left: 6rem;
+    margin-right: 1rem;}
+.cuenta_input {display: block;
+        color: white;
+        width: 80%;
+        margin: 4rem auto;
+        background: transparent;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+    border-bottom: 1px solid gray;
+    font-size: 2rem;}
+.cuenta_enviar {display: block;
+        color: white;
+        width: 80%;
+        margin: 4rem auto;
+        background-color: rgba(0, 235, 235, 0.842);
+        border-radius: 20px;
+        font-size: 3rem;
+        border: none;
+        height: 4.5rem;
+}
+.cuenta_a {display: flex;
+justify-content: center;
+text-align: center;}
+.cuenta_a a {text-decoration: none;
+        
+        color: rgb(255, 94, 0);}
+    
+.cuenta_form .cuenta_input:focus {
+        color: black;
+        outline: none;}
+.cuenta_enviar:hover {
+        cursor: pointer;
+}
+.separador {height: 20rem;}
+
+@media (max-width:1024px) {
+    .separador {height: 32rem;}
+    .cuenta_contenedor {
+        width: 50%;}
+    .cuenta_h3 h3 {width: ;}
+}
+
+@media (max-width:600px){
+    .cuenta_contenedor {
+        width: 60%;
+    }
+}
