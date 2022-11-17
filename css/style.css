@@ -350,6 +350,13 @@ font-weight: bold;}
 @media screen and (max-width: 1024px){
 .separador_videos {height: 26rem;}
 }
+@media screen and (max-width: 500px){
+.separador_videos {height: 33.5rem;}
+.videos h2 {font-size: 3rem;
+padding-top: 3rem;}
+.videos iframe {height: 170px;
+width: 300px;}
+}
 /* Pagina contacto*/
 
 .contacto {
